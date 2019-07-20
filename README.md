@@ -123,7 +123,9 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
      The offline mode can search in parallel and is faster than online mode. However, it's difficult to debug your BFS program, since you have to spend too much time to load knowledge base before searching. Therefore, I suggest you to use this mode if you ensure there's no problem in your BFS program.
 
       ```shell
-     #In our experiment, we set max_train as 60k and beam size as 1000. If your resources can support it, you can use more and set larger beam size. 10k dialogs need about 20 hours with 5 threads.
+     #In our experiment, we set max_train as 60k and beam size as 1000. 
+     #If your resources can support it, you can use more and set larger beam size. 
+     #10k dialogs need about 20 hours with 5 threads. One thread needs about 70G memory.
      python BFS/run.py -mode offline -num_parallel 5 -beam_size 1000 -max_train 10000
       ```
 
