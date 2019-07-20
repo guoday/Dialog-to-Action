@@ -125,11 +125,10 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
       ```shell
      #In our experiment, we set max_train as 60k and beam size as 1000. 
      #If your resources can support it, you can use more and set larger beam size. 
-     #10k dialogs need about 20 hours with 5 threads. 
      #Suggest that you set the number of parallel as large as possible.
      python BFS/run.py -mode offline -num_parallel 5 -beam_size 1000 -max_train 10000
       ```
- ***Note: max_train = 60k needs three days using 10 threads (one thread needs 70G~ memory). However, you don't have to wait for finishing this stage. For example, if you search 1% training data, you can leave this BFS program to run in the backend and jump to next stage to train D2A model.**
+     ***Note: max_train = 60k needs three days using 10 threads (one thread needs 70G~ memory). However, you don't have to wait for finishing this stage. For example, if you search 1% training data, you can leave this BFS program to run in the backend and jump to next stage to train D2A model.**
  
    - **online**
 
