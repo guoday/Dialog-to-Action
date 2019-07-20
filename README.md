@@ -117,7 +117,7 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
 2. Generating logical forms using BFS
 
    There's two modes to generate logical forms (**offline** and **online**)
-
+  
    - **offline**
 
      The offline mode can search in parallel and is faster than online mode. However, it's difficult to debug your BFS program, since you have to spend too much time to load knowledge base before searching. Therefore, I suggest you to use this mode if you ensure there's no problem in your BFS program.
@@ -126,11 +126,11 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
      #In our experiment, we set max_train as 60k and beam size as 1000. 
      #If your resources can support it, you can use more and set larger beam size. 
      #Suggest that you set the number of parallel as large as possible.
-     #Besides, you can send the e-mail to Daya Guo (guody5@mail2.sysu.edu.cn) to ask for the searched data.
      python BFS/run.py -mode offline -num_parallel 5 -beam_size 1000 -max_train 10000
       ```
      ***Note: max_train = 60k needs three days using 10 threads (one thread needs 70G~ memory). However, you don't have to wait for finishing this stage. For example, if you search 1% training data, you can leave this BFS program to run in the backend and jump to next stage to train D2A model.**
- 
+     
+     ***If your resource is limited, you can send an e-mail to Daya Guo (guody5@mail2.sysu.edu.cn) and ask for the searched data.**
    - **online**
 
      The online mode can debug your BFS program easily. The idea is to load knowledge base as a server first, and then the BFS program access the server using HTTP. Therefore, you can start your BFS program quickly without loading the knowledge base, which can help you debug. However, it's too slow to generating logical forms using HTTP. I suggest you to use this mode only if you want to debug your BFS program.
