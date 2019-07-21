@@ -1,8 +1,11 @@
 # Introduction
 
 Implement of the paper "Dialog-to-Action: Conversational Question Answering Over a Large-Scale Knowledge Base". The pipeline of D2A on CSQA includes Entity Detection and Linking **(EDL)**, Relation Classifier **(RC)** , Generating weakly-supervised data using breath frist search **(BFS)** , Semantic Parser **(SMP)**. 
+
 ***The grammar has some differences and you can refer to the grammar defined in BFS/parser.py.***
+
 ***The reproduced result is shown as the below, which makes difference reported in the paper.***
+```shell
                                    Recall            Precision
 
 Overall                             65.67             65.54
@@ -20,6 +23,7 @@ Simple Question (Coreferenced)      57.36             55.51
 Simple Question (Direct)            79.74             77.18
 
 Simple Question (Ellipsis)          84.90             78.31
+```
 
 # Requirements
 
