@@ -1,6 +1,6 @@
 # Introduction
 
-Implement of the paper "Dialog-to-Action: Conversational Question Answering Over a Large-Scale Knowledge Base". The pipeline of D2A on CSQA includes Entity Detection and Linking **(EDL)**, Relation Classifier **(RC)** , Generating weakly-supervised data using breath frist search **(BFS)** , Semantic Parser **(SMP)**. The grammar has some differences in this repo, and you can refer to the grammar defined in BFS/parser.py 
+Implement of the paper "Dialog-to-Action: Conversational Question Answering Over a Large-Scale Knowledge Base". The pipeline of D2A on CSQA includes Entity Detection and Linking **(EDL)**, Relation Classifier **(RC)** , Generating weakly-supervised data using breath frist search **(BFS)** , Semantic Parser **(SMP)**. The grammar has some differences and you can refer to the grammar defined in BFS/parser.py 
 
 # Requirements
 
