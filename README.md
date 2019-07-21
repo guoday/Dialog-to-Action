@@ -4,7 +4,7 @@ Implement of the paper "Dialog-to-Action: Conversational Question Answering Over
 
 ***The grammar has some differences and you can refer to the grammar defined in BFS/parser.py.***
 
-***The reproduced result is shown as the below, which makes difference reported in the paper.***
+***The reproduced result is shown as the below, which makes difference compared result reported in the paper.***
 ```shell
                                    Recall            Precision
 
