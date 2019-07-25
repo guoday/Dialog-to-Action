@@ -160,20 +160,21 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
      python BFS/server.py #using another terminal to run it
      python BFS/run.py -mode online -num_parallel 1  -beam_size 1000 -max_train 10000 
      ```
+     
 3. Oracle score of BFS
 
-  ```shell
-  Simple Question (Direct) 96.09
-  Simple Question (Ellipsis) 94.3
-  Verification (Boolean) (All) 77.23
-  Quantitative Reasoning (All) 41.29
-  Quantitative Reasoning (Count) (All) 66.19
-  Simple Question (Coreferenced) 91.38
-  Logical Reasoning (All) 48.51
-  Comparative Reasoning (Count) (All) 32.21
-  Clarification 0.89
-  Comparative Reasoning (All) 24.79
-  ```
+    ```shell
+    Simple Question (Direct) 96.09
+    Simple Question (Ellipsis) 94.3
+    Verification (Boolean) (All) 77.23
+    Quantitative Reasoning (All) 41.29
+    Quantitative Reasoning (Count) (All) 66.19
+    Simple Question (Coreferenced) 91.38
+    Logical Reasoning (All) 48.51
+    Comparative Reasoning (Count) (All) 32.21
+    Clarification 0.89
+    Comparative Reasoning (All) 24.79
+    ```
 
 # Semantic Parser (SMP)
 
