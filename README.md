@@ -4,23 +4,20 @@ Implement of the paper "Dialog-to-Action: Conversational Question Answering Over
 
 ***After cleaning the code, reproduced results are shown as the below. There are some inconsisitent number compared with the result reported in the paper. If you want to reproduce numbers reported in the paper, you can send an e-mail to ask for first version.***
 ```shell
-                                   Recall            Precision
-
-Overall                             65.67             65.54
-
-Clarification                       37.58             34.13
-
-Comparative Reasoning (All)         41.14             53.36
-
-Logical Reasoning (All)             61.10             66.20
-
-Quantitative Reasoning (All)        47.55             56.25
-
-Simple Question (Coreferenced)      57.36             55.51
-
-Simple Question (Direct)            79.74             77.18
-
-Simple Question (Ellipsis)          84.90             78.31
+                                    Recall          Precision
+Overall                             66.17             65.93
+Clarification                       40.43             37.80
+Comparative Reasoning (All)         43.74             55.92
+Logical Reasoning (All)             64.17             65.02
+Quantitative Reasoning (All)        48.83             56.13
+Simple Question (Coreferenced)      58.17             56.53
+Simple Question (Direct)            78.65             76.89
+Simple Question (Ellipsis)          84.14             78.40
+----------------------------------------------------------------------------------------------------
+                                            Accuracy
+Comparative Reasoning (Count) (All)          17.71
+Quantitative Reasoning (Count) (All)         36.24
+Verification (Boolean) (All)                 37.51
 ```
 
 # Requirements
@@ -184,7 +181,7 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
 
    ```shell
    mkdir data/SMP
-   python SMP/preprocess.py -num_each_type 15000
+   python SMP/preprocess.py -num_each_type 10000
    ```
 
 2. Training the D2A model
