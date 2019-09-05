@@ -74,9 +74,15 @@ def prune(action_sequences,action):
         
     #without copy, A15 must follow A4,A22
     conflict_action=['A4','A22']
-    if len(action_sequences)!=0 and action_sequences[-1] in conflict_action and action!="A15":
-        need_prune=True
-    
+    if len(action_sequences)!=0 and action_sequences[-1] in conflict_action:
+        if action!="A15":
+            need_prune=True
+
+    if action=="A15" and len(action_sequences)!=0:
+        if  action_sequences[-1] not in conflict_action:
+            need_prune=True
+        
+        
     #these actions only use twice continuously, thus at most 2-hop and prevent dead loop
     conflict_action=['A4','A22']
     if len(action_sequences)>1 and action_sequences[-2] in conflict_action and action_sequences[-1] in conflict_action and action in conflict_action:
@@ -272,7 +278,7 @@ class Parser(object):
                         if item.startswith('Q') and self.database.entity_type(item)==x:
                             answer.append(item)
                     answer=set(answer)
-                    if len(answer)==0 or answer==y:
+                    if len(answer)==0:
                         return None
                     else:
                         return answer                      
@@ -394,8 +400,7 @@ class Parser(object):
             return None
         
     @timeout_decorator.timeout(20)    
-    def BFS(self,entities,pres,types,numbers,beam_size):
-
+    def BFS(self,entities,pres,types,numbers,beam_size):   
         self.beamsize=beam_size
 
         action=self.build_action(entities,pres,types,numbers)
@@ -526,6 +531,9 @@ class Parser(object):
                         local_answer=history_menory[tuple(current_s)]
                     else:
                         local_answer=self.op(current_s_a[0],current_s_a[1:])
+                        if current_s_a[0] in ['inter','diff','union'] and len(current_s_a[1:])==2 and (local_answer==current_s_a[1] or local_answer==current_s_a[2]):
+                            flag=False
+                            break                        
                         history_menory[tuple(current_s)]=local_answer
                     if local_answer is None:
                         flag=False
