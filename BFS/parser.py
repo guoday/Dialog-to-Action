@@ -12,7 +12,7 @@ Base_action={
 "A1":("S","set"),  #A1:S->set
 "A2":("S","num"),  #A2:S->num
 "A3":('S','bool'), #A3:S->bool
-"A4":("set",('find',"set","r")), #A4:set->find(set,r)
+"A4":("set",('find',"r","set")), #A4:set->find(set,r)
 "A5":("num",("count","set")),   #A5:num->count(set)
 "A6":('bool',('in','e','set')), #A6:bool->in(e,set)
 "A7":('set',('union','set','set')), #A7:set->union(set1,set2)
@@ -30,7 +30,7 @@ Base_action={
     
 #A22 help reverse relation, A23 help add isA relation to graph
 #A26-A28 help implement function of paper A7-A9
-"A22":("set",("find_reverse","set","r")), #S->find(set,reverse(r))       
+"A22":("set",("find_reverse","r","set")), #S->find(set,reverse(r))       
 "A23":('set',('filter','Type','set')), #S->find(set,"isA Type")
     
 #A24-A25 distinguish which number is instantiated
@@ -74,15 +74,9 @@ def prune(action_sequences,action):
         
     #without copy, A15 must follow A4,A22
     conflict_action=['A4','A22']
-    if len(action_sequences)!=0 and action_sequences[-1] in conflict_action:
-        if action!="A15":
-            need_prune=True
-
-    if action=="A15" and len(action_sequences)!=0:
-        if  action_sequences[-1] not in conflict_action:
-            need_prune=True
-        
-        
+    if len(action_sequences)!=0 and action_sequences[-1] in conflict_action and action!="A15":
+        need_prune=True
+    
     #these actions only use twice continuously, thus at most 2-hop and prevent dead loop
     conflict_action=['A4','A22']
     if len(action_sequences)>1 and action_sequences[-2] in conflict_action and action_sequences[-1] in conflict_action and action in conflict_action:
@@ -234,11 +228,11 @@ class Parser(object):
                         return None
                     return temp
             elif op=='find':
-                if type(x)==set and type(y)==str and y.startswith('P'):
+                if type(y)==set and type(x)==str and x.startswith('P'):
                     temp=set()
-                    for _x in x:
-                        if type(_x)==str and _x.startswith('Q'):
-                            t=self.database.sub_pre(_x,y)
+                    for _y in y:
+                        if type(_y)==str and _y.startswith('Q'):
+                            t=self.database.sub_pre(_y,x)
                             if t is None:
                                 return None
                             else:
@@ -253,11 +247,11 @@ class Parser(object):
                 else:
                     return None
             elif op=='find_reverse':
-                if type(x)==set and type(y)==str and y.startswith('P'):
+                if type(y)==set and type(x)==str and x.startswith('P'):
                     temp=set()
-                    for _x in x:
-                        if type(_x)==str and _x.startswith('Q'):
-                            t=self.database.obj_pre(_x,y)
+                    for _y in y:
+                        if type(_y)==str and _y.startswith('Q'):
+                            t=self.database.obj_pre(_y,x)
                             if t is None:
                                 return None
                             else:
@@ -278,7 +272,7 @@ class Parser(object):
                         if item.startswith('Q') and self.database.entity_type(item)==x:
                             answer.append(item)
                     answer=set(answer)
-                    if len(answer)==0:
+                    if len(answer)==0 or answer==y:
                         return None
                     else:
                         return answer                      
@@ -400,7 +394,8 @@ class Parser(object):
             return None
         
     @timeout_decorator.timeout(20)    
-    def BFS(self,entities,pres,types,numbers,beam_size):   
+    def BFS(self,entities,pres,types,numbers,beam_size):
+
         self.beamsize=beam_size
 
         action=self.build_action(entities,pres,types,numbers)
@@ -531,9 +526,6 @@ class Parser(object):
                         local_answer=history_menory[tuple(current_s)]
                     else:
                         local_answer=self.op(current_s_a[0],current_s_a[1:])
-                        if current_s_a[0] in ['inter','diff','union'] and len(current_s_a[1:])==2 and (local_answer==current_s_a[1] or local_answer==current_s_a[2]):
-                            flag=False
-                            break                        
                         history_menory[tuple(current_s)]=local_answer
                     if local_answer is None:
                         flag=False
