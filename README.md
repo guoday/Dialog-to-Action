@@ -181,7 +181,7 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
 
    ```shell
    mkdir data/SMP
-   python SMP/preprocess.py -num_each_type 10000
+   python SMP/preprocess.py -num_each_type 15000
    ```
 
 2. Training the D2A model
