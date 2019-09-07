@@ -49,6 +49,10 @@ Base_action={
 
 
 def prune(action_sequences,action):
+    #for instantiation, we don't need to prune
+    if int(action[1:])>=1000:
+        return False
+    
     #This function mainly defind some prune rules to avoid dead loop in BFS search
     need_prune=False
     #these actions only use at most once
@@ -546,3 +550,4 @@ class Parser(object):
                     
         return logical_forms,answers,logical_action
   
+
