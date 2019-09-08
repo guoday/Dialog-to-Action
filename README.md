@@ -161,16 +161,16 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
 3. Oracle score of BFS
 
     ```shell
-    Simple Question (Direct) 96.09
-    Simple Question (Ellipsis) 94.3
-    Verification (Boolean) (All) 77.23
-    Quantitative Reasoning (All) 41.29
-    Quantitative Reasoning (Count) (All) 66.19
-    Simple Question (Coreferenced) 91.38
-    Logical Reasoning (All) 48.51
-    Comparative Reasoning (Count) (All) 32.21
-    Clarification 0.89
-    Comparative Reasoning (All) 24.79
+    Simple Question (Direct) 96.26
+    Simple Question (Coreferenced) 91.41
+    Verification (Boolean) (All) 78.27
+    Comparative Reasoning (Count) (All) 33.15
+    Clarification 0.9
+    Comparative Reasoning (All) 25.5
+    Quantitative Reasoning (Count) (All) 68.05
+    Logical Reasoning (All) 48.27
+    Quantitative Reasoning (All) 42.35
+    Simple Question (Ellipsis) 95.1
     ```
 
 # Semantic Parser (SMP)
