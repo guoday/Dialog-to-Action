@@ -4,20 +4,22 @@ Implement of the paper "Dialog-to-Action: Conversational Question Answering Over
 
 ***After cleaning the code, reproduced results are shown as the below. There are some inconsisitent number compared with the result reported in the paper. If you want to reproduce numbers reported in the paper, you can send an e-mail to ask for first version.***
 ```shell
+----------------------------------------------------------------------------------------------------
                                     Recall          Precision
-Overall                             66.17             65.93
-Clarification                       40.43             37.80
-Comparative Reasoning (All)         43.74             55.92
-Logical Reasoning (All)             64.17             65.02
-Quantitative Reasoning (All)        48.83             56.13
-Simple Question (Coreferenced)      58.17             56.53
-Simple Question (Direct)            78.65             76.89
-Simple Question (Ellipsis)          84.14             78.40
+Overall                             71.15             70.97
+Clarification                       43.26             38.77
+Comparative Reasoning (All)         34.76             47.66
+Logical Reasoning (All)             67.00             72.55
+Quantitative Reasoning (All)        37.97             43.95
+Simple Question (Coreferenced)      68.92             67.50
+Simple Question (Direct)            85.51             82.74
+Simple Question (Ellipsis)          85.26             79.00
 ----------------------------------------------------------------------------------------------------
                                             Accuracy
-Comparative Reasoning (Count) (All)          17.71
-Quantitative Reasoning (Count) (All)         36.24
-Verification (Boolean) (All)                 37.51
+Comparative Reasoning (Count) (All)          14.05
+Quantitative Reasoning (Count) (All)         37.36
+Verification (Boolean) (All)                 40.81
+
 ```
 
 # Requirements
