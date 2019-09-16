@@ -2,7 +2,7 @@
 
 Implement of the paper ["Dialog-to-Action: Conversational Question Answering Over a Large-Scale Knowledge Base"](http://papers.nips.cc/paper/7558-dialog-to-action-conversational-question-answering-over-a-large-scale-knowledge-base.pdf). The pipeline of D2A on CSQA includes Entity Detection and Linking **(EDL)**, Relation Classifier **(RC)** , Generating weakly-supervised data using breath frist search **(BFS)** , Semantic Parser **(SMP)**. 
 
-***After cleaning the code, the number is higher compared with the result reported in the paper because of the grammar definition. If you want to reproduce numbers reported in the paper, you can send an e-mail to ask for first version.***
+***After cleaning the code, the number is higher compared with the result reported in the paper due to the definition of grammar. If you want to reproduce numbers reported in the paper, you can send an e-mail to ask for first version.***
 ```shell
                                     Recall          Precision
 Overall                             72.50             71.09
