@@ -60,7 +60,7 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
    ``` shell
    mkdir EDL/model
    export CUDA_VISIBLE_DEVICES=0 
-   python3 -u EDL/main.py \
+   python3 -u -m EDL.main \
        --vocab=data/EDL/vocab.in  \
        --train_prefix=data/EDL/train \
        --dev_prefix=data/EDL/dev  \
@@ -92,7 +92,7 @@ Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA
    ```shell
    mkdir RC/model
    export CUDA_VISIBLE_DEVICES=0 
-   python -u RC/main.py \
+   python -u -m RC.main \
        --vocab_pre=data/RC/vocab  \
        --train_prefix=data/RC/train \
        --dev_prefix=data/RC/dev  \
