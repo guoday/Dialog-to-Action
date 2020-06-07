@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.dirname(os.path.dirname(__file__))))
 import BFS.parser as Parser
 import sys
 import os
