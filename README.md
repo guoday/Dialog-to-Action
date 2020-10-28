@@ -30,14 +30,14 @@ Implement of the paper ["Dialog-to-Action: Conversational Question Answering Ove
 
 Or you can download dataset from [website](https://amritasaha1812.github.io/CSQA/download/).
 
-1. Download and unzip [dialog files](https://drive.google.com/file/d/1dgf-Qjvhfv-_EWoDjrTCAY5CwYCw-djt/view) (**CSQA_v9.zip** ) to the data folder
+1. Download and unzip [dialog files](https://zenodo.org/record/3268649#.X5kdVIgzZaS) (**CSQA_v9.zip** ) to the data folder
 
    ``` shell
    unzip data/CSQA_v9.zip -d data/
    mv data/CSQA_v9 data/CSQA
    ```
 
-2. Download [wikidata](https://drive.google.com/drive/folders/1ITcgvp4vZo1Wlb66d_SnHvVmLKIqqYbR) and  move all wikidata jsons to "data/kb"
+2. Download [wikidata](https://zenodo.org/record/4052427#.X5kddYgzZaR) and  move all wikidata jsons to "data/kb"
 
    ``` shell
    mkdir data/kb
